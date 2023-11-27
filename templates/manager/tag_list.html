@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    <br>
+    Tag List
+    <a href="{% url 'manager:tag-create' %}" style="float: right" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+
+  {% if tag_list %}
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+
+      {% for tag in tag_list %}
+        <tr>
+          <td>
+            {{ tag.name }}
+          </td>
+          <td>
+            <a href="{% url 'manager:tag-update' pk=tag.id %}">
+              Update
+            </a>
+          </td>
+          <td>
+            <a style="color: red"
+               href="{% url 'manager:tag-delete' pk=tag.id %}">
+              Delete
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+    <p class="mt-3">There are no tags.</p>
+  {% endif %}
+{% endblock %}
