@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.task {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.task-content {
+    font-size: 66px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.task-date,
+.task-status,
+.task-tags {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.task-status {
+    color: #007bff;
+}
+
+.task-tags {
+    font-style: italic;
+}
