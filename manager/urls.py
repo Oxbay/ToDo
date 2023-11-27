@@ -9,14 +9,14 @@ from manager.views import (
     TagCreate,
     TagUpdate,
     TagDelete,
-    task_status_update,
+    task_status,
 )
 
 urlpatterns = [
     path("", TaskList.as_view(), name="task-list"),
     path("task/create/", TaskCreate.as_view(), name="task-create"),
     path("task/<int:pk>/update/", TaskUpdate.as_view(), name="task-update"),
-    path("task/<int:pk>/status-update/", task_status_update, name="task-status-update"),
+    path("task/<int:pk>/status/", task_status, name="task-status"),
     path("task/<int:pk>/delete/", TaskDelete.as_view(), name="task-delete"),
     path("tags/", TagList.as_view(), name="tag-list"),
     path("tags/create/", TagCreate.as_view(), name="tag-create"),

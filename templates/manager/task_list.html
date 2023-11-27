@@ -16,13 +16,13 @@
         <div class="task">
           <div class="task-header">
             <strong>{{ task.content }}</strong>
-            {% if task.done %}
-              <span class="task-status">Done</span>
-              <a href="{% url 'manager:task-status-update' pk=task.id %}"
+            {% if task.status %}
+              <span style="color: green">Done</span>
+              <a href="{% url 'manager:task-status' pk=task.id %}"
                  class="btn btn-secondary link-to-page" style="float: right">Undo</a>
             {% else %}
-              <span class="status-not-done">Not done</span>
-              <a href="{% url 'manager:task-status-update' pk=task.id %}"
+              <span style="color: red">Not done</span>
+              <a href="{% url 'manager:task-status' pk=task.id %}"
                  class="btn btn-success link-to-page" style="float: right">Complete</a>
             {% endif %}
           </div>
@@ -49,6 +49,6 @@
       {% endfor %}
     </div>
   {% else %}
-    <p>There are no tasks.</p>
+    <p>You have no task today)</p>
   {% endif %}
 {% endblock %}
